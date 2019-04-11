@@ -6,9 +6,15 @@ namespace ColorSwitch
 {
     public class Death : MonoBehaviour
     {
-        void onTriggerEnter(Collider2D other)
+        public GameObject button;
+        public Player alive;
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Destroy(other.gameObject);
+            alive.playerAlive = false;
+            button.SetActive(true);
+            Destroy(collision.gameObject);
         }
+
     }
 }

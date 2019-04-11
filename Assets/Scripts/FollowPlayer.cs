@@ -6,15 +6,21 @@ namespace ColorSwitch
     {
 
         public Transform player;
+        public Player alive;
 
         void Update()
+            
         {
-            Vector3 camPos = transform.position;
-            Vector3 playerPos = player.position;
-            if (playerPos.y > camPos.y)
+            if(alive.playerAlive)
             {
-                transform.position = new Vector3(camPos.x, playerPos.y, camPos.z);
+                Vector3 camPos = transform.position;
+                Vector3 playerPos = player.position;
+                if (playerPos.y > camPos.y)
+                {
+                    transform.position = new Vector3(camPos.x, playerPos.y, camPos.z);
+                }
             }
+            
         }
     }
 }
